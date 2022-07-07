@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Card from "./Card";
+import { useState } from "react";
 function App() {
+  const [color, setColor] = useState("#000000");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        Color: {color}
+      </h1>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+        }}
+      >
+        <Card color={color} number={-40} />
+        <Card color={color} number={-30} />
+        <Card color={color} number={-20} />
+        <Card color={color} number={-10} />
+        <Card color={color} number={0} />
+        <Card color={color} number={10} />
+        <Card color={color} number={20} />
+        <Card color={color} number={30} />
+        <Card color={color} number={40} />
+      </div>
+      <br></br>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <input
+          type="text"
+          value={`${color}`}
+          onChange={(e) => {
+            setColor(e.target.value);
+          }}
+        />
+        {/* <input
+          type="color"
+          value={color}
+          onChange={(e) => setColor(e.target.value)}
+        /> */}
+      </div>
     </div>
   );
 }
