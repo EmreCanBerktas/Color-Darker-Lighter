@@ -1,7 +1,7 @@
 import Card from "./Card";
 import { useState } from "react";
 function App() {
-  const [color, setColor] = useState("#000000");
+  const [color, setColor] = useState("#FFC0CB");
   return (
     <div>
       <h1
