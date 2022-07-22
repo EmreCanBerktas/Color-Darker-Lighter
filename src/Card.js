@@ -16,8 +16,8 @@ function Card({ color, number }) {
         style={{
           backgroundColor: LightenDarkenColor(color, number),
           color: "white",
-          width: "50px",
-          height: "50px",
+          width: "65px",
+          height: "65px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
