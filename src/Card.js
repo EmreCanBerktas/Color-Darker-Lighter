@@ -1,9 +1,4 @@
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
-} from "@chakra-ui/react";
+import { Alert } from "@chakra-ui/react";
 import React from "react";
 import { LightenDarkenColor } from "lighten-darken-color";
 
@@ -21,15 +16,13 @@ function Card({ color, number }) {
         style={{
           backgroundColor: LightenDarkenColor(color, number),
           color: "white",
-          width: "100px",
-          height: "100px",
+          width: "50px",
+          height: "50px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           cursor: "pointer",
           padding: "5px",
-          margin: "5px",
-          borderRadius: "50%",
         }}
         onClick={() => {
           navigator.clipboard.writeText(LightenDarkenColor(color, number));
@@ -41,7 +34,6 @@ function Card({ color, number }) {
       >
         {LightenDarkenColor(color, number)}
       </div>
-      <br></br>
     </div>
   );
 }
