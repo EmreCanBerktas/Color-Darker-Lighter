@@ -6,14 +6,11 @@ function Card({ color, number }) {
   return (
     <div>
       <Flex alignItems="center" flexDirection="column">
-        <Box backgroundColor="grey" borderRadius="20%">
-          %{number}
-        </Box>
+        <Box>%{number}</Box>
         <br></br>
-        <div
+        <Box
           style={{
             backgroundColor: LightenDarkenColor(color, number),
-            color: "white",
             width: "65px",
             height: "65px",
             display: "flex",
@@ -30,15 +27,14 @@ function Card({ color, number }) {
           }}
         >
           {LightenDarkenColor(color, number)}
-        </div>
+        </Box>
         <br></br>
-        <div
+        <Box
           style={{
             backgroundColor: LightenDarkenColor(color, -number),
-            color: "white",
+            display: "flex",
             width: "65px",
             height: "65px",
-            display: "flex",
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
@@ -52,7 +48,7 @@ function Card({ color, number }) {
           }}
         >
           {LightenDarkenColor(color, -number)}
-        </div>
+        </Box>
       </Flex>
     </div>
   );

@@ -1,11 +1,25 @@
-import { Heading, Input, Flex, Container } from "@chakra-ui/react";
+import {
+  Heading,
+  Input,
+  Flex,
+  Container,
+  useColorMode,
+  Button,
+} from "@chakra-ui/react";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Card from "./Card";
 import { useState } from "react";
 function App() {
+  const { colorMode, toggleColorMode } = useColorMode();
   const [color, setColor] = useState("#FF7000");
   return (
     <div>
-      <Heading>Color Shader</Heading>
+      <Flex minWidth="max-content" alignItems="center" gap="2">
+        <Heading>Color Shader</Heading>
+        <Button onClick={toggleColorMode}>
+          {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+        </Button>
+      </Flex>
       <Container maxW="730px">
         <div>
           <Flex justifyContent="center" alignItems="center">
