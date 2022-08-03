@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Heading,
   Input,
@@ -8,20 +9,24 @@ import {
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Card from "./Card";
-import { useState } from "react";
+import Footer from "./Footer";
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   const [color, setColor] = useState("#FF7000");
   return (
     <div>
-      <Flex minWidth="max-content" alignItems="center" gap="2">
+      <Button onClick={toggleColorMode}>
+        {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+      </Button>
+
+      <br></br>
+      <br></br>
+      <Flex minWidth="max-content" alignItems="center" justifyContent="center">
         <Heading>Color Shader</Heading>
-        <Button onClick={toggleColorMode}>
-          {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-        </Button>
       </Flex>
       <Container maxW="730px">
         <div>
+          <br></br>
           <Flex justifyContent="center" alignItems="center">
             <Input
               width="400px"
@@ -57,6 +62,13 @@ function App() {
             <Card color={color} number={0} />
           </div>
         </div>
+        <Flex
+          minWidth="max-content"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Footer />
+        </Flex>
       </Container>
     </div>
   );

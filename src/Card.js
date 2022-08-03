@@ -17,7 +17,7 @@ function Card({ color, number }) {
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
-            padding: "5px",
+            borderRadius: "20%",
           }}
           onClick={() => {
             navigator.clipboard.writeText(LightenDarkenColor(color, number));
@@ -38,7 +38,7 @@ function Card({ color, number }) {
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
-            padding: "5px",
+            borderRadius: "20%",
           }}
           onClick={() => {
             navigator.clipboard.writeText(LightenDarkenColor(color, -number));
